@@ -1,7 +1,8 @@
 import java.util.Random;
 
 /**
- * Created by wangh on 2018/3/23.
+  * 扩展：
+ * 1.真分数的运算
  */
 public class ProperFraction {  //产生真分数式子
     public String createProblem(){
