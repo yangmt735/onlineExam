@@ -69,10 +69,28 @@ public class Main {
         Integer expressionCount = scanner.nextInt();
 
         List<String> expressionList = new ArrayList<>();
-        for (int i = 0; i < expressionCount; i++) {
+        for (int j = 0; j < expressionCount; j++) {
+			int key = (int) (Math.random() * 3);
+			switch (key) {
+			case 1:// 简单的四则运算
+				for (int i = 0; i < expressionCount; i++) {
+		            expressionList.add(getNextExpression());
+		            //System.out.println(String.format("正在生成第 %s 道题", i));
+		        }
+				break;
+			default:// 真分数的加减运算
+				ProperFraction properFraction=new ProperFraction();
+				for (int i = 0; i < expressionCount; i++) {
+		            expressionList.add(properFraction.createProblem());
+		            //System.out.println(String.format("正在生成第 %s 道题", i));
+		        }
+				break;
+			}
+		}
+        /*for (int i = 0; i < expressionCount; i++) {
             expressionList.add(getNextExpression());
             //System.out.println(String.format("正在生成第 %s 道题", i));
-        }
+        }*/
 
         writeExpressionsToFile(expressionList);
         System.out.println("生成练习题完成");
@@ -134,7 +152,7 @@ public class Main {
             else if (MINUS == operator) {
                 // 减法校验被减数大于减数
                 // 当包含小数点时向下取整
-                String currentResultString = scriptEngine.eval(expression.toString()).toString();
+                String currentResultString = scriptEngine.eval(expression.toString()).toString();//eval是Javascript内置函数，用于计算字符串表达式的值
                 if (currentResultString.contains(DOT)) {
                     currentResultString = currentResultString.split(DOT_REGEX)[0];
                 }
@@ -207,4 +225,5 @@ public class Main {
         }
         return nextCalValue;
     }
+   
 }
