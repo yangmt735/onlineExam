@@ -50,21 +50,45 @@ public class Main {
     private static final Integer MAX_OPERATOR_COUNT = 5;
     private static final Integer MIN_CAL_VALUE = 0;
     private static final Integer MAX_CAL_VALUE = 100;
-    /**
-     * 文件中的常量
-     */
-    private static final String FILE_NAME = "result.txt";
-    private static final String STUDENT_NO = "2017013406";
-    private static final String NEW_LINE = "\r\n";
-
+    
     private static Random random = new Random();
 
     /**
      * 主方法
-    */
+     */
     public static void main(String[] args) throws ScriptException {
-        System.out.println("请输入要生成的练习题数量：");
-        Scanner scanner = new Scanner(System.in);
+        //System.out.println("请输入要生成的练习题数量：");
+    	List<String> expressionList = new ArrayList<>();
+        try {
+           Integer expressionCount= Integer.parseInt(args[0]); //接收命令行参数
+           if(expressionCount>1000||expressionCount<1){
+               System.out.println("对不起，只允许输入1-1000的数字！");
+               return; //结束运行
+           }
+
+           for (int j = 0; j < expressionCount; j++) {
+   			int key = (int) (Math.random() * 3);
+   			switch (key) {
+   			case 1:// 简单的四则运算
+   				for (int i = 0; i < expressionCount; i++) {
+   		            expressionList.add(getNextExpression());
+   		            //System.out.println(String.format("正在生成第 %s 道题", i));
+   		        }
+   				break;
+   			default:// 真分数的加减运算
+   				ProperFraction properFraction=new ProperFraction();
+   				for (int i = 0; i < expressionCount; i++) {
+   		            expressionList.add(properFraction.createProblem());
+   		            //System.out.println(String.format("正在生成第 %s 道题", i));
+   		        }
+   				break;
+   			}
+   		}
+       }catch (NumberFormatException e){ //输入非数字字符等
+           System.out.println("对不起，只允许输入1-1000的数字！");
+           return; //结束运行
+       }
+        /*Scanner scanner = new Scanner(System.in);
 
         Integer expressionCount = scanner.nextInt();
 
@@ -86,36 +110,14 @@ public class Main {
 		        }
 				break;
 			}
-		}
+		}*/
         /*for (int i = 0; i < expressionCount; i++) {
             expressionList.add(getNextExpression());
             //System.out.println(String.format("正在生成第 %s 道题", i));
         }*/
-
-        writeExpressionsToFile(expressionList);
+        CreatFile file=new CreatFile();
+        file.writeExpressionsToFile(expressionList);
         System.out.println("生成练习题完成");
-    }
-
-    /**
-     * 将练习题输出到文件
-     *
-     * @param expressionList
-     */
-    private static void writeExpressionsToFile(List<String> expressionList) {
-        File file = new File(FILE_NAME);
-        if (file.exists()) { //如果文件已存在，则删除文件
-            file.delete();
-        }
-        try (FileWriter fileWriter = new FileWriter(file)) {
-            fileWriter.append(STUDENT_NO);
-            for (String expression : expressionList) {
-                fileWriter.append(NEW_LINE);
-                fileWriter.append(expression);
-            }
-            fileWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
