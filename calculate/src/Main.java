@@ -60,31 +60,38 @@ public class Main {
         //System.out.println("请输入要生成的练习题数量：");
     	List<String> expressionList = new ArrayList<>();
         try {
-           Integer expressionCount= Integer.parseInt(args[0]); //接收命令行参数
+           Scanner scanner = new Scanner(System.in);
+           Integer expressionCount; //接收命令行参数
+		   if (Integer.valueOf(Integer.parseInt(args[0]))!=null) {
+			expressionCount = Integer.parseInt(args[0]);
+			}
+		   else {
+			expressionCount = scanner.nextInt();
+			}
            if(expressionCount>1000||expressionCount<1){
                System.out.println("对不起，只允许输入1-1000的数字！");
                return; //结束运行
            }
 
-           for (int j = 0; j < expressionCount; j++) {
-   			int key = (int) (Math.random() * 3);
+           for (int j = 0; j < expressionCount/2; j++) {
+   			int key = (int) (Math.random() * 2);
    			switch (key) {
    			case 1:// 简单的四则运算
-   				for (int i = 0; i < expressionCount; i++) {
+   				for (int i = 0; i < expressionCount/2; i++) {
    		            expressionList.add(getNextExpression());
    		            //System.out.println(String.format("正在生成第 %s 道题", i));
    		        }
    				break;
    			default:// 真分数的加减运算
    				ProperFraction properFraction=new ProperFraction();
-   				for (int i = 0; i < expressionCount; i++) {
+   				for (int i = 0; i < expressionCount/2; i++) {
    		            expressionList.add(properFraction.createProblem());
    		            //System.out.println(String.format("正在生成第 %s 道题", i));
    		        }
    				break;
    			}
    		}
-       }catch (NumberFormatException e){ //输入非数字字符等
+       }catch (Exception e){ //输入非数字字符等
            System.out.println("对不起，只允许输入1-1000的数字！");
            return; //结束运行
        }
