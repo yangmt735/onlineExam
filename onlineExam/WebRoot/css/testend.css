@@ -1,0 +1,32 @@
+@charset "UTF-8";
+body{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+		   margin:0px;
+		   padding:0px;
+		   width:100%;
+		   height:99%;  
+		   font-size:14px;
+		   background-color:#C0CEDC;
+		   position:absolute;
+		   text-align: center;
+		}
+		
+		#div2{
+			margin:30px 0 0 0;
+			height: 40px;
+			line-height: 40px;
+			color: #3180D8;
+			font-family: "Microsoft YaHei";
+			font-size: 40px;
+		}
+		#div3{
+			margin:180px 0 0 0;
+			height: 40px;
+			line-height: 40px;
+			color: #3180D8;
+			font-family: "Microsoft YaHei";
+			font-size: 20px;
+		}

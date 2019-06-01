@@ -1,0 +1,54 @@
+@charset "UTF-8";
+body{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+		   margin:0px;
+		   padding:0px;
+		   width:100%;
+		   height:99.5%;  
+		   font-size:14px;
+		   background-color:#C0CEDC;
+		   position:absolute;
+		   text-align: center;
+		}
+		#div2{
+			margin:0 0 0 270px;
+			padding:0px;
+			width:500px;
+			height:400px;
+		
+		}
+		#div3{
+			margin:40px 0 0 0;
+			height: 40px;
+			line-height: 40px;
+			color: #3180D8;
+			font-family: "Microsoft YaHei";
+			font-size: 20px;
+		}
+		#div4{
+			margin:5px 0 0 10px;
+			
+			
+		}
+		#div4 textarea{
+			padding:5px;
+			width:500px;
+			height:300px;
+		}
+		#div5 input{
+		border:none;
+		    background-color:#5d75a4;
+		    color:white;
+		    width:120px; 
+		    height:30px;
+		    box-shadow: 3px 3px 0 gainsboro;
+		    margin:10px 5px;
+		}
+		#div5 input:hover{
+		color: orange;
+		    /*  background-color:#9AD3E7; */
+			box-shadow: -3px -3px 0 gainsboro;
+		}

@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.welcome{
+	margin:5px 0 0 5px;
+}
+.welcome span{
+	font-size:20px;
+}

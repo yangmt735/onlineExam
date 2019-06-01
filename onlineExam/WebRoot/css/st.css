@@ -1,0 +1,94 @@
+@charset "UTF-8";
+body{
+			margin: 0;
+			padding: 0;
+		}#div1{
+		   margin:60px 0 0 0;
+		   padding:0px;
+		   width:100%;
+		   height:99%;  
+		   font-size:14px;
+		   position:absolute;
+		   text-align: center;
+		}
+		#div2{
+			margin:0 0 0 30px;
+			padding:0px;
+			width:900px;
+			border: 1px solid #F0F0F0;
+		}
+		
+		.divtitle{
+			height: 40px;
+			line-height: 40px;
+			color: #3180D8;
+			font-family: "Microsoft YaHei";
+			border-bottom: 1px dotted #ededed;
+			float: left;
+			padding-left: 25px;
+		}
+		.divtitle2{
+			margin: 10px 0 0 50px;
+			float:left;
+		}
+		.divtitle2 select{
+			margin:0 5px;
+		}
+		.divtitle2 input{
+			border:1px solid #0d60bc;
+			border-radius:5px;
+			background-color:transparent;
+			padding:3px 5px;
+		}
+		.divtitle2 input:hover{
+			background-color:#0d60bc;
+			cursor:pointer;
+			color:white;
+		}
+		.divtitle2 a{
+			text-decoration:none;
+		}
+		.divtitle2 a:hover{
+			color:red;
+		}
+		table{
+			border:0px;
+			margin:0px;
+			padding:0px;
+			width:100%;
+			text-align: center;
+			font-size: 12px;
+			color:#6D6D6D;
+		}
+		tr{
+			margin:0px;
+			padding:0px;
+		}
+		td{
+			margin:0px;
+		    padding:5px;
+			height:8px;
+			border: 1px solid #F0F0F0;
+		}
+		#div2 a:link,#div2 a:visited{
+			color:#1183C2;
+			text-decoration:none;
+		}
+		#div2 a:hover{
+			color:#df4011;
+		}
+		.pagediv{
+			height: 20px;
+			float: right;
+			margin: 10px;
+			font-size: 12px;
+		}
+		.add{
+			border:none;
+		    background-color:transparent;
+		    color:#64beef;
+		    margin:0 10px;
+		}
+		.add:hover{
+			color: orange;
+		}
